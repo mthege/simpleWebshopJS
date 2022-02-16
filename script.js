@@ -1,5 +1,4 @@
 var dbAsJson = window.localStorage.getItem("mydb");
-console.log(dbAsJson);
 var db = JSON.parse(dbAsJson);
 
 
@@ -31,9 +30,12 @@ function render_lists(result) {
             "</div>" +
             "<br>" +
 
-            //"<button onmousedown='Redirect(" +
-            //result[index].id +
-            //");'>Details</button>" + "<button onclick='addCartItem(" + result[index].name + ");' '>Lägg i kundkorg</button>" +
+            "<button onmousedown='Redirect(" +
+            result[index].id +
+            ");'>Details</button>" +
+
+            "<button onmousedown='addCartItem2(\"" +
+            result[index].id + "\");cartTotalPrice();showCart();addMessage();'>Lägg i kundkorg</button>" +
             "</div>";
     }
     ul.innerHTML = li;

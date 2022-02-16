@@ -1,9 +1,9 @@
 //den väntar på att dom-objektet ska ha laddats klar innan den tar resten av funktionerna. 
-if (document.readyState == "loading") {
+/*if (document.readyState == "loading") {
     document.addEventListener("DOMContentLoaded", ready);
 } else {
     ready();
-}
+}*/
 //hämtar json-data och parsar den för att kunna få den som ett objekt. 
 var dbAsJson = window.localStorage.getItem("mydb");
 var db = JSON.parse(dbAsJson);
@@ -13,12 +13,18 @@ function Redirect(x) {
 }
 //bekräftelse på att produkt har lagts till i varukorg. 
 function addMessage() {
-    alert('Product added to cart')
+    alert('Product added to cart');
 
 }
 //deklarerar den tom array
 let enArray = [];
 //pushar in den specifika produkten till enArray
+
+function addCartItem2(id) {
+    let item = db.products.find(element => element.id == id);
+    addCartItem(item.id, item.name, item.price, item.image, item.gender, item.color, item.size, item.theme);
+}
+
 function addCartItem(ettId, namn, pris, bild, gendeer, farg, storlek, tema) {
 
     enArray.push({
@@ -31,14 +37,10 @@ function addCartItem(ettId, namn, pris, bild, gendeer, farg, storlek, tema) {
         size: storlek,
         theme: tema,
     });
-
-
 }
 
 
-
-
-
+/*
 //dynamiskt bygger upp html:en för varje produkt i db.products
 function ready() {
     text = "";
@@ -101,4 +103,4 @@ function ready() {
     }
     //skriver ut produkten till sidan
     document.getElementById("stuff").innerHTML = text;
-}
+}*/

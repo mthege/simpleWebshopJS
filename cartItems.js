@@ -8,11 +8,12 @@ function purchaseItems() {
 }
 //en funktion som visar totala priset
 function cartTotalPrice() {
-    text1 = 0;
+    let totalPrice = 0;
     for (i = 0; i < enArray.length; i++) {
-        text1 += enArray[i].price;
+        totalPrice += enArray[i].price;
     }
-    document.getElementById("cart-total-price").innerHTML = text1;
+
+    document.getElementById("cart-total-price").innerHTML = totalPrice;
 }
 //tar bort en produkt
 function removeCartItem(u) {
@@ -28,31 +29,7 @@ function showCart() {
             //enArray[i].image +
             //">" +
             //"</img>" +
-            "<div class='prod-text'>" +
-            "<div class='name'>" +
-            "Product: " +
-            enArray[i].name +
-            "</div>" +
-            "<div class='price'>" +
-            "Price: €" +
-            enArray[i].price +
-            "</div>" +
-            "<div class='gender'>" +
-            "Gender: " +
-            enArray[i].gender +
-            "</div>" +
-            "<div class='color'>" +
-            "Color: " +
-            enArray[i].color +
-            "</div>" +
-            "<div class='size'>" +
-            "Size: " +
-            enArray[i].size +
-            "</div>" +
-            "<div class='theme'>" +
-            "Theme: " +
-            enArray[i].theme +
-            "</div>" +
+
             "<br>" +
             "</div>" +
             "</div>" +
